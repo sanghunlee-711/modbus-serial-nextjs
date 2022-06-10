@@ -10,3 +10,9 @@ export const serialServerOn = () => {
     console.log(what);
   });
 };
+
+export const serialServerSend = () => {
+  serialServer.write('test', (error) => {
+    console.error({ writeError: error });
+  });
+};
