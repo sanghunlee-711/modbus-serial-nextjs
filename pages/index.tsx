@@ -1,6 +1,11 @@
 import type { NextPage } from 'next';
 import { readModbus } from '../lib/modbus';
-import { serialServerOn, serialServerSend } from '../lib/serial';
+import {
+  serialClose,
+  serialOpen,
+  serialServerOn,
+  serialServerSend,
+} from '../lib/serial';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
@@ -14,10 +19,20 @@ const Home: NextPage = () => {
     readModbus();
   };
 
+  const onOpen = () => {
+    serialOpen();
+  };
+
+  const onClose = () => {
+    serialClose();
+  };
+
   return (
     <div className={styles.container}>
       <button onClick={onWrite}>writeModbus Test</button>
       <button onClick={onRead}>readModbus Test</button>
+      <button onClick={onOpen}>Open Test</button>
+      <button onClick={onClose}>Close Test</button>
     </div>
   );
 };
