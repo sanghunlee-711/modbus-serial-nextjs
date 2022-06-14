@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   reactStrictMode: true,
   webpack: (config, { isServer }) => {
@@ -21,6 +22,7 @@ const nextConfig = {
     net: false,
     child_process: false,
   },
+  // useFileSystemPublicRoutes: false,
 };
 
 module.exports = nextConfig;
