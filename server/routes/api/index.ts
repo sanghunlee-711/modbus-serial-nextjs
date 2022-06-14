@@ -30,7 +30,7 @@ router.get('/connect', (req, res) => {
 
 router.get('/data', async (req, res) => {});
 router.post('/write', async (req, res) => {
-  const buffer = req.body.data.openBuff;
+  const buffer = req.body.data.bufferData;
   console.log(buffer);
   serialServer.write(Buffer.from(buffer), (error: any) => {
     console.error({ WRITE_ERROR: error });
