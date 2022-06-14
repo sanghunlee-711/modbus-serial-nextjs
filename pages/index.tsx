@@ -27,8 +27,15 @@ const Home: NextPage = () => {
     });
   };
 
-  const onClose = () => {
+  const onClose = async () => {
     // serialClose();
+    let closeArr = [1, 6, 0, 21, 0, 0, 152, 14];
+    let closeBuff = Buffer.from(closeArr);
+    const res2 = await axios.post('/api/write', {
+      data: {
+        closeBuff,
+      },
+    });
   };
 
   return (

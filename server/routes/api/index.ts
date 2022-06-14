@@ -2,9 +2,9 @@ import * as express from 'express';
 import { SerialPort } from 'serialport';
 
 const serialServer = new SerialPort({
-  path: '/dev/tty.usbserial-14210',
+  path: 'COM3',
   //
-  baudRate: 115200,
+  baudRate: 38400,
 });
 
 export const serialServerOn = () => {
