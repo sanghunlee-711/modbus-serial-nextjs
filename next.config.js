@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
+const withPWA = require('next-pwa');
+const withPlugins = require('next-compose-plugins');
 
 const nextConfig = {
   reactStrictMode: true,
+
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback.fs = false;
@@ -50,4 +53,7 @@ const nextConfig = {
   // useFileSystemPublicRoutes: false,
 };
 
-module.exports = nextConfig;
+module.exports = withPlugins(
+  [[withPWA, { pwa: { dest: 'public' } }]],
+  nextConfig
+);

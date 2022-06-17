@@ -1,0 +1,7 @@
+# For instance,  block all crawlers for /accounts page
+User-agent: *
+Disallow: /accounts
+
+# Allow all crawlers
+User-agent: *
+Allow: /

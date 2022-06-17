@@ -19,6 +19,6 @@ app.use('/', routes.app);
     app.listen(port);
     console.log(`server listening on port ${port}`);
   } catch (err) {
-    console.error(err.message);
+    console.error(err);
   }
 })();
